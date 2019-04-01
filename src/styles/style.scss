@@ -1,0 +1,64 @@
+@import "../../reset.css";
+
+body{
+    background-color: white;
+    margin: 100px;
+}
+
+.main{
+    background-color: #edf7f5;
+}
+
+.main__title{
+    display: inline;
+    border: 3px solid black;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    position: relative;
+    top: -10px;
+    left: 30px;
+    font-size: 20px;
+}
+
+.main__content{
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.categories{
+    margin-bottom: 100px;
+    .categories__list{
+        display: flex;
+        .categories__category{
+            padding: 12px;
+            color: #abc4df;
+        }
+        .categories__category--active{
+            padding: 12px;
+            color: #36455d;
+            text-decoration: underline solid black;
+        }
+    }
+}
+
+.thumbnails{
+    display: flex;
+    flex-wrap: wrap;
+    .thumbnails__thumbnail{
+        padding: 20px;
+        img{
+            width: 250px;
+        }
+        .thumbnails__title{
+            position: relative;
+            color: white;
+            font-size: 40px;
+            font-weight: 900;
+            top: -145px;
+            left: 90px;
+        }
+    }
+}
