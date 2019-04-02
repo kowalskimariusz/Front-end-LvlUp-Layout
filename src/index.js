@@ -4,15 +4,39 @@ import './styles/style.scss';
 
 //defaultMember();
 
-const categories = document.querySelectorAll(".drinks__list>li");
+const drinks = document.querySelectorAll(".drinks__list>li");
+const thumbnails = document.querySelectorAll(".thumbnails__thumbnail>img");
+const thumbnails_titles = document.querySelectorAll(".thumbnails__thumbnail__title");
 
-categories.forEach(
+drinks.forEach(
     function(e){
         e.addEventListener("click",function(ev){
-            categories.forEach(function(el){
+            drinks.forEach(function(el){
                 el.className="drinks__list__drink";
             });
             e.className="drinks__list__drink--active";
+        });
+    }
+);
+
+thumbnails.forEach(
+    function(e){
+        e.addEventListener("click",function(ev){
+            thumbnails.forEach(function(el){
+                el.className="thumbnails__thumbnail__image";
+            });
+            e.className="thumbnails__thumbnail__image--selected";
+        });
+    }
+);
+
+thumbnails_titles.forEach(
+    function(e){
+        e.addEventListener("click",function(ev){
+            thumbnails.forEach(function(el){
+                el.parentNode.querySelector("img").className="thumbnails__thumbnail__image";
+            });
+            e.parentNode.querySelector("img").className="thumbnails__thumbnail__image--selected";
         });
     }
 );
