@@ -1,8 +1,17 @@
 @import "../../reset.css";
 
+*,html,body{
+    box-sizing: border-box;
+}
+
+$break-small: 600px;
+
 body{
     background-color: white;
-    margin: 100px;
+    margin: 10%;
+    @media screen and (min-width: $break-small) {
+        margin: 100px;
+    }
 }
 
 .main{
@@ -22,22 +31,31 @@ body{
 }
 
 .main__content{
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: 10%;
+    padding-right: 10%;
+    @media screen and (min-width: $break-small) {
+        padding-left: 200px;
+        padding-right: 200px;
+    }
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 10px;
 }
 
-.categories{
+.drinks{
     margin-bottom: 100px;
-    .categories__list{
+    .drinks__list{
         display: flex;
-        .categories__category{
-            padding: 12px;
+        flex-wrap: wrap;
+        flex-direction: column;
+        @media screen and (min-width: $break-small) {
+            flex-direction: row;
+        }
+        .drinks__list__drink{
+            padding: 15px;
             color: #abc4df;
         }
-        .categories__category--active{
-            padding: 12px;
+        .drinks__list__drink--active{
+            padding: 15px;
             color: #36455d;
             text-decoration: underline solid black;
         }
@@ -48,17 +66,26 @@ body{
     display: flex;
     flex-wrap: wrap;
     .thumbnails__thumbnail{
-        padding: 20px;
+        padding: 30px;
+        width: 100%;
+        height: 100%;
+        @media screen and (min-width: $break-small) {
+            width: 300px;
+            height: 300px;
+        }
         img{
-            width: 250px;
+            width: 100%;
+            box-shadow: 0px 0px 100px lightgrey,
         }
         .thumbnails__title{
-            position: relative;
             color: white;
+            font-family: "Arial";
             font-size: 40px;
-            font-weight: 900;
-            top: -145px;
-            left: 90px;
+            font-weight: 700;
+            position: relative;
+            text-align: center;
+            top: -50%;
+            transform: translate(0%,-50%);
         }
     }
 }
